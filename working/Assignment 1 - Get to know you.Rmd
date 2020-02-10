@@ -1,0 +1,18 @@
+---
+title: "Assignment 1 - Get to Know You"
+author: "Jenny Balmagia"
+date: "February 10, 2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+###Who am I and why am I taking this course?
+
+I am a second year MESM student, specializing in water resources management with a focus in environmentl data science. The simple answer for why I'm taking this course is that I'd like to complete the environmental data science focus, and this class is required for that focus track. I've also been working a lot in ArcMap for my Group Project recently, and not much in R, so I'm really looking forward to dusting off my R skills and continuing to practice coding and troubleshooting. The timing of this course also lines up well with my begining to do more data management and R coding work for my part-time internship.
+
+###Data Science Background
+
+I didn't have much data science or coding background before coming to Bren. I've since taken both of Allison's data analysis classes ESM206 and ESM244, as well as both of Frew's GIS classes, ESM263 and ESM267. I'm familiar and comfortable working with R and Git, but haven't used it much lately. I'm probably more comfortable in ArcMap at this point, and know the smallest amount of ArcPy. 
