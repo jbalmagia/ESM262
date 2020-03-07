@@ -12,14 +12,21 @@
 
 fish_info = function(catch,price){
   
-  fish_max = function(catch){
+#fish_max() is a nested function within fish_info that finds most freq fish caught for one location
+  fish_max = function(catch){                     
     catch = as.factor(catch)
     max_catch = names(which.max(summary(catch)))
     return(max_catch)
   }
+  
+#Use sapply() to find most freq fish caught at each location in fish_catch
   max_by_loc = sapply(catch, fish_max)
   return(max_by_loc)
-  }
+
+#Jessica - Now we need to make 2 more nested functions, one for revenue by location and one for revenue by fish species
+}
+
+
 
 
 

@@ -29,8 +29,7 @@ fish_catch = data.frame(loc_A = sample(possible_fish, size = 20, replace = T), l
 
 fish_info(catch = fish_catch)
 
-fish_catch = as.factor(fish_catch)
-which.max(summary(fish_catch$loc_B))
+
 
 
 ```
