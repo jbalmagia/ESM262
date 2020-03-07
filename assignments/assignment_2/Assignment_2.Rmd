@@ -1,0 +1,30 @@
+---
+title: "Assignment 2"
+author: "Jenny Balmagia and Jessica Jagdeo"
+date: "March 6, 2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+```
+
+
+```{r}
+#Generate sample data for function
+
+#Price - Table that has prices for different fish ($/lb)
+
+fish_price = data.frame(fish = c("Tuna","Swordfish","Salmon","Cod"), price = c(13, 9, 11, 6))
+
+#Catch - Table that has the number caught for each fish species for each location 
+
+possible_catch = data.frame(fish = c("Tuna", "Swordfish", "Salmon", "Cod"), loc_A = ceiling(rnorm(4, 10, 2)), loc_B = ceiling(rnorm(4, 15, 3)), loc_C = ceiling(rnorm(4, 7, 2)))
+
+
+
+
+```
+
