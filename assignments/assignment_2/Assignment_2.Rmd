@@ -21,9 +21,16 @@ fish_price = data.frame(fish = c("Tuna","Swordfish","Salmon","Cod"), price = c(1
 
 #Catch - Table that has the number caught for each fish species for each location 
 
-possible_catch = data.frame(fish = c("Tuna", "Swordfish", "Salmon", "Cod"), loc_A = ceiling(rnorm(4, 10, 2)), loc_B = ceiling(rnorm(4, 15, 3)), loc_C = ceiling(rnorm(4, 7, 2)))
+possible_fish = c("Tuna", "Swordfish", "Salmon", "Cod")
 
+fish_catch = data.frame(loc_A = sample(possible_fish, size = 20, replace = T), loc_B = sample(possible_fish, size = 20, replace = T), loc_C = sample(possible_fish, size = 20, replace = T))
 
+#test
+
+fish_info(catch = fish_catch)
+
+fish_catch = as.factor(fish_catch)
+which.max(summary(fish_catch$loc_B))
 
 
 ```

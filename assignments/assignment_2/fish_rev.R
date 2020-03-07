@@ -10,6 +10,16 @@
 
 
 
-fish_rev = function(price, catch){
+fish_info = function(catch,price){
   
-}
+  fish_max = function(catch){
+    catch = as.factor(catch)
+    max_catch = names(which.max(summary(catch)))
+    return(max_catch)
+  }
+  max_by_loc = sapply(catch, fish_max)
+  return(max_by_loc)
+  }
+
+
+
