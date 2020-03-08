@@ -45,6 +45,8 @@ fish_info = function(catch,price){
 
 #Jessica - Now we need to make 2 more nested functions, one for revenue by location and one for revenue by fish species
    
+#Jenny - I created the outlines for the remaining nested functions and sapply loops, but can't get them to work yet. Not sure how to apply the price dataframe to the catch dataframe. Will work on it more later
+   
  return(list(max_by_loc, loc_price, rev_by_loc))
 
 }
