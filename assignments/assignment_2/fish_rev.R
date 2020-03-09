@@ -10,38 +10,27 @@
 
 
 
-fish_info = function(catch,price){
+fish_rev = function(catch,price){
   
-#fish_max() is a nested function within fish_info that finds most freq fish caught for one location
-  fish_max = function(catch){                     
-    catch = as.factor(catch)
-    max_catch = names(which.max(summary(catch)))
-    return(max_catch)
-  }
+#fish_max finds most freq fish caught for one location
+   fish_max = as.factor(catch)
+   fish_max = names(which.max(summary(catch)))
   
 #Use sapply() to find most freq fish caught at each location in catch table
-  max_by_loc = sapply(catch, fish_max)
-  return(max_by_loc)
+   # max_by_loc = sapply(catch, fish_max)
+   # return(max_by_loc)
   
-#loc_revenue() is a nested function within fish_info that finds total revenue at each location
-   loc_revenue = function(catch, price){
-     loc_rev = price[,1]*catch
-     loc_rev = colSums(loc_rev)
-     return(loc_rev)
-   }
+#loc_revenue finds total revenue at each location
+   loc_revenue = price[,1]*catch
+   loc_revenue = colSums(loc_revenue)
    
 # fish_revenue() is a nested function within fish_info that finds total revenue for each fish species across locations
-    fish_revenue = function(catch, price) {
-      fish_rev = price[,1]*catch
-      fish_rev = rowSums(fish_rev)
-      return(fish_rev)
-    }
-
-#Jessica - Now we need to make 2 more nested functions, one for revenue by location and one for revenue by fish species
+   fish_revenue = price[,1]*catch
+   fish_revenue = rowSums(fish_revenue)
    
-#Jenny - I created the remaining nested functions. They output the right things, but can't get them to show up in function return:
+#Jenny - I created the remaining equations. To output them, I had to get rid of the nested functions. I also created a new data frame with fish counts by locations (fish_loc), but the fish_max equation isn't working properly now. Sorry! Trying to troubleshoot.
    
- return(list(Max_Catch = max_catch, Most_Frequent_Fish = max_by_loc, Revenue_per_Location = loc_rev, Revenue_per_Fish = fish_rev))
+  return(list(Max_Catch = fish_max, Revenue_per_Location = loc_revenue, Revenue_per_Fish = fish_revenue))
 
 }
 

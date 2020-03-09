@@ -46,7 +46,9 @@ fish_loc <- fish_locations %>%
 
 #test
 
-fish_info(catch = fish_loc, price = fish_price)
+fish_rev(catch = fish_loc, price = fish_price) 
+
+# Revenue per location and revenue per fish is working, but the max catch at each location is not working
 
 
 
