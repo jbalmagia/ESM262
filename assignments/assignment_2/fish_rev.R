@@ -23,31 +23,25 @@ fish_info = function(catch,price){
   max_by_loc = sapply(catch, fish_max)
   return(max_by_loc)
   
-#loc_revenue() is a nested function within fish_info that finds total revenue one location
+#loc_revenue() is a nested function within fish_info that finds total revenue at each location
    loc_revenue = function(catch, price){
-     loc_rev = sum(price[,1]*catch)
+     loc_rev = price[,1]*catch
+     loc_rev = colSums(loc_rev)
      return(loc_rev)
    }
    
-# Use sapply() to find total revenue at each location in catch table
-   rev_by_loc = sapply(catch, loc_revenue)
-   return(rev_by_loc)
-   
-# # fish_revenue() is a nested function within fish_info that finds total revenue for each fish species across locations
-#    fish_revenue = function(catch, price) {
-#      fish_rev = 
-#    }
-#   
-# # Use sapply() to find total revenue for each fish species
-#    rev_by_fish = sapply(catch, fish_revenue)
-#    return(rev_by_fish)
-  
+# fish_revenue() is a nested function within fish_info that finds total revenue for each fish species across locations
+    fish_revenue = function(catch, price) {
+      fish_rev = price[,1]*catch
+      fish_rev = rowSums(fish_rev)
+      return(fish_rev)
+    }
 
 #Jessica - Now we need to make 2 more nested functions, one for revenue by location and one for revenue by fish species
    
-#Jenny - I created the outlines for the remaining nested functions and sapply loops, but can't get them to work yet. Not sure how to apply the price dataframe to the catch dataframe. Will work on it more later
+#Jenny - I created the remaining nested functions. They output the right things, but can't get them to show up in function return:
    
- return(list(Most_Frequent_Fish = max_by_loc, Revenue_per_Location = loc_rev ))
+ return(list(Max_Catch = max_catch, Most_Frequent_Fish = max_by_loc, Revenue_per_Location = loc_rev, Revenue_per_Fish = fish_rev))
 
 }
 

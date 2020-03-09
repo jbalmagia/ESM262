@@ -30,7 +30,7 @@ possible_fish = c("Tuna", "Swordfish", "Salmon", "Cod")
 
 fish_catch = data.frame(loc_A = sample(possible_fish, size = 20, replace = T), loc_B = sample(possible_fish, size = 20, replace = T), loc_C = sample(possible_fish, size = 20, replace = T)) 
 
-# I think we need to have a dataframe with counts, rather than with names:
+# Jenny - I think we need to have a dataframe with counts, rather than with names:
 
 fish_locations <- as.data.frame(possible_fish) %>% 
   mutate(Trinidad = sample(x = 10:50, size = 4, replace = TRUE),
@@ -46,7 +46,7 @@ fish_loc <- fish_locations %>%
 
 #test
 
-fish_info(catch = fish_catch)
+fish_info(catch = fish_loc, price = fish_price)
 
 
 
