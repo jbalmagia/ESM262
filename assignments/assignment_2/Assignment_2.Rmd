@@ -28,9 +28,7 @@ fish_price <- fish_prices %>%
 
 possible_fish = c("Tuna", "Swordfish", "Salmon", "Cod")
 
-fish_catch = data.frame(loc_A = sample(possible_fish, size = 20, replace = T), loc_B = sample(possible_fish, size = 20, replace = T), loc_C = sample(possible_fish, size = 20, replace = T)) 
-
-# Jenny - I think we need to have a dataframe with counts, rather than with names:
+# fish_catch = data.frame(loc_A = sample(possible_fish, size = 20, replace = T), loc_B = sample(possible_fish, size = 20, replace = T), loc_C = sample(possible_fish, size = 20, replace = T)) 
 
 fish_locations <- as.data.frame(possible_fish) %>% 
   mutate(Trinidad = sample(x = 10:50, size = 4, replace = TRUE),
@@ -44,12 +42,9 @@ rownames(fish_locations) <- fish_locations[,1]
 fish_loc <- fish_locations %>% 
   select(-possible_fish)
 
-#test
+#Testing function using generated data: fish_loc and fish_price
 
-fish_info(price = fish_price, catch = fish_loc, graph = TRUE)
-
-
-# Revenue per location and revenue per fish is working, but the max catch at each location is not working
+fish_rev(price = fish_price, catch = fish_loc, graph = TRUE)
 
 
 ```
