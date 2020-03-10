@@ -16,6 +16,7 @@ library(tidyverse)
 #Generate sample data for function
 
 #Price - Table that has prices for different fish ($/lb)
+#sample data called 'fish_price'
 
 fish_prices = data.frame(fish = c("Tuna","Swordfish","Salmon","Cod"), price = c(13, 9, 11, 6))
 
@@ -25,10 +26,7 @@ fish_price <- fish_prices %>%
   select(price)
 
 #Catch - Table that has the number caught for each fish species for each location 
-
-possible_fish = c("Tuna", "Swordfish", "Salmon", "Cod")
-
-# fish_catch = data.frame(loc_A = sample(possible_fish, size = 20, replace = T), loc_B = sample(possible_fish, size = 20, replace = T), loc_C = sample(possible_fish, size = 20, replace = T)) 
+#sample data called 'fish_loc'
 
 fish_locations <- as.data.frame(possible_fish) %>% 
   mutate(Trinidad = sample(x = 10:50, size = 4, replace = TRUE),
@@ -44,19 +42,11 @@ fish_loc <- fish_locations %>%
 
 #Testing function using generated data: fish_loc and fish_price
 
-fish_rev(price = fish_price, catch = fish_loc, graph = TRUE)
+fish_info(price = fish_price, catch = fish_loc, graph = TRUE)
 
 
 ```
 
-```{r}
 
-#Troubleshooting 
- loc_revenue = fish_price[,1]*fish_loc
-   loc_revenue = colSums(loc_revenue)
-   loc_revenue_df = as.data.frame(loc_revenue)
-   loc_revenue_df = rownames_to_column(loc_revenue_df, "location")
-  
-   
-```
+
 
